@@ -7,22 +7,29 @@
 PBL_APP_INFO(MY_UUID,
              "Hola mundo", "ebr bots",
              1, 1, /* App version */
-             DEFAULT_MENU_ICON,
+             RESOURCE_ID_IMAGE_MENU_ICON,
              APP_INFO_STANDARD_APP);
 
 Window window;
 TextLayer hello_layer;
+TextLayer world_layer;
 
 void handle_init(AppContextRef ctx) {
 
   window_init(&window, "Ventana principal");
   window_stack_push(&window, true /* Animated */);
 
-  text_layer_init(&hello_layer, GRect(0, 65, 144, 30));
+  text_layer_init(&hello_layer, GRect(0, 35, 144, 30));
   text_layer_set_text_alignment(&hello_layer, GTextAlignmentCenter);
-  text_layer_set_text(&hello_layer, "Hola mundo!");
+  text_layer_set_text(&hello_layer, "Hola");
   text_layer_set_font(&hello_layer, fonts_get_system_font(FONT_KEY_DROID_SERIF_28_BOLD));
   layer_add_child(&window.layer, &hello_layer.layer);
+
+  text_layer_init(&world_layer, GRect(0, 65, 144, 30));
+  text_layer_set_text_alignment(&world_layer, GTextAlignmentCenter);
+  text_layer_set_text(&world_layer, "mundo!");
+  text_layer_set_font(&world_layer, fonts_get_system_font(FONT_KEY_DROID_SERIF_28_BOLD));
+  layer_add_child(&window.layer, &world_layer.layer);
 }
 
 

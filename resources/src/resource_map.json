@@ -3,9 +3,9 @@
  "versionDefName": "RESOURCE_APP",
  "media": [
 	   {
-	    "type":"raw",
-	    "defName":"DUMMY",
-	    "file":"resource_map.json"
+	    "type":"png",
+	    "defName":"IMAGE_MENU_ICON",
+	    "file":"images/mapa_mundo.png"
 	   }
 	  ]
 }
